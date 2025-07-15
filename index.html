@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa de Barrios - Castelli</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Mapa de Barrios en Castelli</h1>
+
+    <div class="botones-top">
+      <button onclick="miUbicacion()">📍 Mi Ubicación</button>
+      <button onclick="cambiarVista()">🗺️ Alternar Vista</button>
+    </div>
+
+    <div class="listado">
+      <input type="text" id="nombreUsuario" placeholder="Tu nombre" />
+      <br />
+      <label for="barrioSelect">Selecciona un barrio:</label>
+      <select id="barrioSelect" onchange="centrarBarrio()">
+        <option value="">-- Elegir barrio --</option>
+      </select>
+      <button id="btnCompartir" onclick="compartirUbicacion()" style="display:none;">
+        📤 Compartir barrio por WhatsApp
+      </button>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="historialUbicaciones" class="historial">
+      <h3>Ubicaciones compartidas</h3>
+      <ul id="listaUbicaciones"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>PJGIGITAL2025</p>
+  </footer>
+</body>
+</html>
